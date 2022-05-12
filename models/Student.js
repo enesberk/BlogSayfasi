@@ -1,15 +1,15 @@
 const {Schema, model}= require('mongoose')
 
 const schema = new Schema({
-    ogrAdSoy:{
+    name:{
         type: String,
         required: true
     },
-    ogrNum:{
+    no:{
         type: Number,
         required: true
     },
-    ogrSinif:{
+    className:{
         type: String,
         required: true
     }

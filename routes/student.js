@@ -6,7 +6,7 @@ const studentController = new StudentController()
 router.get('/', async (req, res) => {
     const students = await studentController.GetAll()
     res.render('index', {
-        students
+        students: students
     })
 })
 

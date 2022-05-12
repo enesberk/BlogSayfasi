@@ -3,6 +3,7 @@ const express =  require("express")
 const mongoose = require("mongoose")
 const exphbs = require("express-handlebars")
 const {PORT, MONGO_URL} = process.env
+const StudentRoute = require('./routes/student')
 
 
 const app = express()
@@ -20,6 +21,8 @@ const hbs = exphbs.create({
 app.engine('hbs',hbs.engine)
 app.set('view engine','hbs')
 app.set('views', 'views')
+
+app.use(StudentRoute)
 
 const conn = MONGO_URL
 
