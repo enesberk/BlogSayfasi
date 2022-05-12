@@ -13,7 +13,7 @@ app.use(express.static('public'))
 
 
 const hbs = exphbs.create({
-    defaultLayout: 'main',
+    defaultLayout: 'mainLayout',
     extname: 'hbs'
 })
 

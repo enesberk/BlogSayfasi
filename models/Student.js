@@ -15,3 +15,5 @@ const schema = new Schema({
     }
     
 })
+
+module.exports = model('Student', schema)
