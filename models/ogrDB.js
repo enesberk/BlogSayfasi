@@ -8,7 +8,7 @@ const schema = new Schema({
     ogrNum:{
         type: Number,
         required: true
-    }
+    },
     ogrSinif:{
         type: String,
         required: true
