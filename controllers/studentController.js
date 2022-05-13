@@ -1,6 +1,16 @@
 const Student = require('../models/Student')
 
 class StudentController {
+    async Create(name, no, className) {
+        try {
+            const result = await Student.create({name, no, className})
+            if(result) return true
+            return false
+        } catch (error) {
+            return null
+        }
+    }
+
     async GetAll() {
         try {
             const students = await Student.find().lean()

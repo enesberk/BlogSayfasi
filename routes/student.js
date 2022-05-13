@@ -10,6 +10,24 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.post('/add', async (req, res) => {
+    try {
+        const {name, no, className} = req.body
+        const result = await studentController.Create(name, no, className)
+        if (!result) return res.status(444).json({
+            message: 'Error'
+        })
+        return res.status(200).json({
+            message: 'OK',
+            result
+        })
+    } catch (error) {
+        return res.status(444).json({
+            message: 'Hata'
+        })
+    }
+})
+
 router.post('/detail', async (req, res) => {
     try {
         const detail = await studentController.GetById(req.body.id)
@@ -31,6 +49,23 @@ router.put('/update', async (req, res) => {
     try {
         const {id, name, no, className} = req.body
         const result = await studentController.UpdateById(id, {name, no, className})
+        if (!result) return res.status(444).json({
+            message: 'Error'
+        })
+        return res.status(200).json({
+            message: 'OK',
+            result
+        })
+    } catch (error) {
+        return res.status(444).json({
+            message: 'Hata'
+        })
+    }
+})
+
+router.delete('/delete', async (req, res) => {
+    try {
+        const result = await studentController.DeleteById(req.body.id)
         if (!result) return res.status(444).json({
             message: 'Error'
         })
