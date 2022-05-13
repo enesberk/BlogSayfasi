@@ -48,7 +48,7 @@ router.post('/detail', async (req, res) => {
 router.put('/update', async (req, res) => {
     try {
         const {id, name, no, className} = req.body
-        const result = await studentController.UpdateById(id, {name, no, className})
+        const result = await studentController.UpdateById(id, name, no, className)
         if (!result) return res.status(444).json({
             message: 'Error'
         })

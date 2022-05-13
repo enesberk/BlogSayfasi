@@ -32,9 +32,12 @@ class StudentController {
     async UpdateById(id, name, no, className) {
         try {
             const result = await Student.findByIdAndUpdate(id, {name, no, className})
-            if(result) return true
-            return false
+            if(result == null) {
+                return false
+            }
+            return true
         } catch (error) {
+            console.log(error)
             return null
         }
     }
