@@ -1,3 +1,56 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Öğrenci Güncelleme Ekranı</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-4">
+            <label for="upt_name">Öğrenci Adı :</label>
+          </div>
+          <div class="col-8">
+            <input style="width: 100%;" type="text" id="upt_name">
+          </div>
+        </div>
+
+        <hr />
+        
+        <div class="row">
+          <div class="col-4">
+            <label for="upt_no">Öğrenci No'su :</label>
+          </div>
+          <div class="col-8">
+            <input style="width: 100%;" type="text" id="upt_no">
+          </div>
+        </div>
+
+        <hr />
+
+        
+        <div class="row">
+          <div class="col-4">
+            <label for="upt_className">Öğrenci Sınıf Adı :</label>
+          </div>
+          <div class="col-8">
+            <input style="width: 100%;" type="text" id="upt_className">
+          </div>
+        </div>
+        <input type="text" style="display: none;" id="upt_id">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+        <button type="button" id="studentUpdateButton" class="btn btn-primary">Güncelle</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="container">
     <div class="row">
         <div class="col-4">
@@ -43,7 +96,7 @@
             {{className}}
         </div>
         <div class="col-3">
-            <button class="btn btn-info" type="button" onclick="updateStudent('{{_id}}')">Düzenle</button>
+            <button class="btn btn-info" type="button" onclick="updateStudent('{{_id}}')" data-toggle="modal" data-target="#exampleModal">Düzenle</button>
             <button class="btn btn-danger" type="button" onclick="deleteStudent('{{_id}}')">Sil</button>
         </div>
     </div>

@@ -18,12 +18,12 @@ router.post('/add', async (req, res) => {
             message: 'Error'
         })
         return res.status(200).json({
-            message: 'OK',
+            message: 'Öğrenci eklendi',
             result
         })
     } catch (error) {
         return res.status(444).json({
-            message: 'Hata'
+            message: 'Öğrenci eklenemedi!'
         })
     }
 })
@@ -35,12 +35,12 @@ router.post('/detail', async (req, res) => {
             message: 'Error'
         })
         return res.status(200).json({
-            message: 'OK',
+            message: 'Öğrenci detayını getirme başarılı',
             detail
         })
     } catch (error) {
         return res.status(444).json({
-            message: 'Hata'
+            message: 'Öğrenci detayı getirilemedi!'
         })
     }
 })
@@ -53,12 +53,12 @@ router.put('/update', async (req, res) => {
             message: 'Error'
         })
         return res.status(200).json({
-            message: 'OK',
+            message: 'Öğrenci bilgileri güncellendi',
             result
         })
     } catch (error) {
         return res.status(444).json({
-            message: 'Hata'
+            message: 'Öğrenci bilgileri güncellenirken hata!'
         })
     }
 })
@@ -70,12 +70,12 @@ router.delete('/delete', async (req, res) => {
             message: 'Error'
         })
         return res.status(200).json({
-            message: 'OK',
+            message: 'Öğrenci bilgisi silindi',
             result
         })
     } catch (error) {
         return res.status(444).json({
-            message: 'Hata'
+            message: 'Öğrenci bilgisi silinirken hata'
         })
     }
 })
